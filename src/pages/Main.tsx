@@ -5,6 +5,8 @@ import { db } from "../firebase";
 import { collection, getDocs } from "firebase/firestore";
 import { addGuestBook } from "../firebase/addGuestBook";
 import AnimatedComponent from "../components/AnimatedComponent";
+import GridImage from "../components/GridImage";
+import ImageSwiper from "../components/ImageSwiper";
 
 const MainPage = () => {
   const { days, hours, minutes, seconds, isOverDay } = useCountdown(
@@ -12,6 +14,7 @@ const MainPage = () => {
   );
 
   const [loading, setLoading] = useState(false);
+  const [swiperIndex, setSwiperIndex] = useState(-1);
 
   const [guestBook, setGuestBook] = useState({ name: "", text: "", date: "" });
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -19,10 +22,18 @@ const MainPage = () => {
   };
   const guestBookCollection = collection(db, "guestBook");
 
-  const onClick = async () => {
+  const onClickSendGuestBook = async () => {
     setLoading(true);
     await addGuestBook(guestBook);
     setLoading(false);
+  };
+
+  const onClickImage = (idx: number) => {
+    setSwiperIndex(idx);
+  };
+
+  const onClickCloseSwiper = () => {
+    setSwiperIndex(-1);
   };
 
   useEffect(() => {
@@ -36,7 +47,6 @@ const MainPage = () => {
         id: doc.id,
         ...doc.data(),
       }));
-      console.log(entries);
     }
     getGuestBook();
   }, []);
@@ -57,17 +67,6 @@ const MainPage = () => {
           ? `${days}일 ${hours}시간 ${minutes}분 ${seconds}초 남았습니다~`
           : `${days}일 ${hours}시간 ${minutes}분 ${seconds}초 지났습니다~`}
       </div>
-      <Box1 />
-      <Box1 />
-      <Box1 />
-      <Box1 />
-      <Box1 />
-      <AnimatedComponent>
-        <Box>
-          저희는 이렇게 만났어요
-          <p>사진</p>
-        </Box>
-      </AnimatedComponent>
 
       <AnimatedComponent>
         <Box>
@@ -82,6 +81,35 @@ const MainPage = () => {
           <p>사진</p>
         </Box>
       </AnimatedComponent>
+
+      <AnimatedComponent>
+        <Box>
+          저희는 이렇게 만났어요
+          <p>사진</p>
+        </Box>
+      </AnimatedComponent>
+
+      <GridImage onClickImage={onClickImage} />
+
+      <Box1 />
+
+      <Box1 />
+
+      <Box1 />
+
+      <Box1 />
+
+      <Box1 />
+
+      <Box1 />
+
+      {swiperIndex >= 0 && (
+        <ImageSwiper
+          onClickCloseSwiper={onClickCloseSwiper}
+          swiperIndex={swiperIndex}
+        />
+      )}
+
       <label>
         이름
         <input id="name" onChange={onChange} value={guestBook.name} />
@@ -90,7 +118,7 @@ const MainPage = () => {
         내용
         <input id="text" onChange={onChange} value={guestBook.text} />
       </label>
-      <button onClick={onClick}>보내기</button>
+      <button onClick={onClickSendGuestBook}>보내기</button>
     </MainPageWrapper>
   );
 };
