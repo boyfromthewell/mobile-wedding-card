@@ -4,11 +4,14 @@ import React, { useEffect, useState } from "react";
 import { db } from "../firebase";
 import { collection, getDocs } from "firebase/firestore";
 import { addGuestBook } from "../firebase/addGuestBook";
+import AnimatedComponent from "../components/AnimatedComponent";
 
 const MainPage = () => {
   const { days, hours, minutes, seconds, isOverDay } = useCountdown(
     new Date("2024-09-21 00:00:00")
   );
+
+  const [loading, setLoading] = useState(false);
 
   const [guestBook, setGuestBook] = useState({ name: "", text: "", date: "" });
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -16,8 +19,10 @@ const MainPage = () => {
   };
   const guestBookCollection = collection(db, "guestBook");
 
-  const onClick = () => {
-    addGuestBook(guestBook);
+  const onClick = async () => {
+    setLoading(true);
+    await addGuestBook(guestBook);
+    setLoading(false);
   };
 
   useEffect(() => {
@@ -52,6 +57,31 @@ const MainPage = () => {
           ? `${days}일 ${hours}시간 ${minutes}분 ${seconds}초 남았습니다~`
           : `${days}일 ${hours}시간 ${minutes}분 ${seconds}초 지났습니다~`}
       </div>
+      <Box1 />
+      <Box1 />
+      <Box1 />
+      <Box1 />
+      <Box1 />
+      <AnimatedComponent>
+        <Box>
+          저희는 이렇게 만났어요
+          <p>사진</p>
+        </Box>
+      </AnimatedComponent>
+
+      <AnimatedComponent>
+        <Box>
+          저희는 이렇게 만났어요
+          <p>사진</p>
+        </Box>
+      </AnimatedComponent>
+
+      <AnimatedComponent>
+        <Box>
+          저희는 이렇게 만났어요
+          <p>사진</p>
+        </Box>
+      </AnimatedComponent>
       <label>
         이름
         <input id="name" onChange={onChange} value={guestBook.name} />
@@ -71,4 +101,48 @@ const MainPageWrapper = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
+`;
+const Box1 = styled.div`
+  background-color: red;
+  width: 100%;
+  height: 200px;
+  margin-bottom: 20px;
+`;
+
+const ProgressBar = styled.div`
+  width: 100%;
+  height: 5px;
+  background-color: #ccc;
+  position: relative;
+  margin-top: 10px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background-color: #76c7c0;
+    animation: loading 1s infinite;
+  }
+
+  @keyframes loading {
+    0% {
+      left: 0%;
+    }
+    50% {
+      left: 50%;
+    }
+    100% {
+      left: 100%;
+    }
+  }
+`;
+
+const Box = styled.div`
+  display: flex;
+  flex-direction: column;
+  p {
+    width: 200px;
+    height: 200px;
+  }
 `;
