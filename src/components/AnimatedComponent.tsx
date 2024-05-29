@@ -1,6 +1,10 @@
 import { motion } from "framer-motion";
 
-const AnimatedComponent = ({ children }) => {
+interface AnimatedComponentProps {
+  children: React.ReactNode;
+}
+
+const AnimatedComponent = ({ children }: AnimatedComponentProps) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 50 }}
