@@ -30,7 +30,7 @@ const ImageSwiper = ({ onClickCloseSwiper, swiperIndex }: ImageSwiperProps) => {
         className="swiper_img"
       >
         {IMAGE.map(({ src, alt }) => (
-          <SwiperSlide>
+          <SwiperSlide key={alt}>
             <SwiperImage src={src} alt={alt} />
           </SwiperSlide>
         ))}
@@ -47,7 +47,7 @@ const Wrapper = styled.div`
   position: fixed;
   top: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.8); /* 검정 투명 배경 */
+  background-color: rgba(0, 0, 0, 0.8);
   display: flex;
   justify-content: center;
   align-items: center;

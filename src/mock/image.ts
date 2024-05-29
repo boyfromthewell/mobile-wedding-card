@@ -1,13 +1,13 @@
-import Image1 from "../../public/temp1.jpg";
-import Image2 from "../../public/temp2.jpg";
-import Image3 from "../../public/temp3.jpg";
-import Image4 from "../../public/temp4.jpg";
-import Image5 from "../../public/temp5.jpg";
-import Image6 from "../../public/temp6.jpg";
-import Image7 from "../../public/temp7.jpg";
-import Image8 from "../../public/temp8.jpg";
-import Image9 from "../../public/temp9.jpg";
-import Image10 from "../../public/temp10.jpg";
+import Image1 from "/temp1.jpg";
+import Image2 from "/temp2.jpg";
+import Image3 from "/temp3.jpg";
+import Image4 from "/temp4.jpg";
+import Image5 from "/temp5.jpg";
+import Image6 from "/temp6.jpg";
+import Image7 from "/temp7.jpg";
+import Image8 from "/temp8.jpg";
+import Image9 from "/temp9.jpg";
+import Image10 from "/temp10.jpg";
 
 export const IMAGE = [
   {
