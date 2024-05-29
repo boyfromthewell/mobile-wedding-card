@@ -13,7 +13,7 @@ const MainPage = () => {
     new Date("2024-09-21 00:00:00")
   );
 
-  const [loading, setLoading] = useState(false);
+  const [, setLoading] = useState(false);
   const [swiperIndex, setSwiperIndex] = useState(-1);
 
   const [guestBook, setGuestBook] = useState({ name: "", text: "", date: "" });
@@ -47,6 +47,7 @@ const MainPage = () => {
         id: doc.id,
         ...doc.data(),
       }));
+      console.log(entries);
     }
     getGuestBook();
   }, []);
@@ -137,34 +138,34 @@ const Box1 = styled.div`
   margin-bottom: 20px;
 `;
 
-const ProgressBar = styled.div`
-  width: 100%;
-  height: 5px;
-  background-color: #ccc;
-  position: relative;
-  margin-top: 10px;
+// const ProgressBar = styled.div`
+//   width: 100%;
+//   height: 5px;
+//   background-color: #ccc;
+//   position: relative;
+//   margin-top: 10px;
 
-  &::before {
-    content: "";
-    position: absolute;
-    width: 50%;
-    height: 100%;
-    background-color: #76c7c0;
-    animation: loading 1s infinite;
-  }
+//   &::before {
+//     content: "";
+//     position: absolute;
+//     width: 50%;
+//     height: 100%;
+//     background-color: #76c7c0;
+//     animation: loading 1s infinite;
+//   }
 
-  @keyframes loading {
-    0% {
-      left: 0%;
-    }
-    50% {
-      left: 50%;
-    }
-    100% {
-      left: 100%;
-    }
-  }
-`;
+//   @keyframes loading {
+//     0% {
+//       left: 0%;
+//     }
+//     50% {
+//       left: 50%;
+//     }
+//     100% {
+//       left: 100%;
+//     }
+//   }
+// `;
 
 const Box = styled.div`
   display: flex;
