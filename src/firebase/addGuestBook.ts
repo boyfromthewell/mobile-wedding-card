@@ -12,6 +12,7 @@ export const addGuestBook = async (data: guestBookType) => {
   const docRef = collection(db, "guestBook");
   try {
     await addDoc(docRef, newData);
+    console.log("success");
   } catch (error) {
     console.error(error);
     alert("등록에 실패 했어요...");
