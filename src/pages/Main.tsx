@@ -1,12 +1,12 @@
 import styled from "styled-components";
 import useCountdown from "../hooks/useCountDown";
 import React, { useEffect, useState } from "react";
-import { db } from "../firebase";
-import { collection, getDocs } from "firebase/firestore";
 import { addGuestBook } from "../firebase/addGuestBook";
 import AnimatedComponent from "../components/AnimatedComponent";
 import GridImage from "../components/GridImage";
 import ImageSwiper from "../components/ImageSwiper";
+import { parseDateObj } from "../utils/parseDateObj";
+import Map from "../components/Map";
 
 const MainPage = () => {
   const { days, hours, minutes, seconds, isOverDay } = useCountdown(
@@ -17,10 +17,10 @@ const MainPage = () => {
   const [swiperIndex, setSwiperIndex] = useState(-1);
 
   const [guestBook, setGuestBook] = useState({ name: "", text: "", date: "" });
+
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setGuestBook((prev) => ({ ...prev, [e.target.id]: e.target.value }));
   };
-  const guestBookCollection = collection(db, "guestBook");
 
   const onClickSendGuestBook = async () => {
     setLoading(true);
@@ -37,19 +37,7 @@ const MainPage = () => {
   };
 
   useEffect(() => {
-    console.log(guestBook);
-  }, [guestBook]);
-
-  useEffect(() => {
-    async function getGuestBook() {
-      const data = await getDocs(guestBookCollection);
-      const entries = data.docs.map((doc) => ({
-        id: doc.id,
-        ...doc.data(),
-      }));
-      console.log(entries);
-    }
-    getGuestBook();
+    console.log(parseDateObj(new Date()));
   }, []);
 
   return (
@@ -111,6 +99,8 @@ const MainPage = () => {
         />
       )}
 
+      <Map />
+      <p>방명록</p>
       <label>
         이름
         <input id="name" onChange={onChange} value={guestBook.name} />

@@ -1,5 +1,6 @@
 import { addDoc, collection } from "firebase/firestore";
 import { db } from ".";
+import { parseDateObj } from "../utils/parseDateObj";
 
 type guestBookType = {
   name: string;
@@ -7,7 +8,7 @@ type guestBookType = {
 };
 
 export const addGuestBook = async (data: guestBookType) => {
-  const newData = { ...data, date: new Date().toString() };
+  const newData = { ...data, date: parseDateObj(new Date()) };
 
   const docRef = collection(db, "guestBook");
   try {
