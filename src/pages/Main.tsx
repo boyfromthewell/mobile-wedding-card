@@ -1,11 +1,10 @@
 import styled from "styled-components";
 import useCountdown from "../hooks/useCountDown";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { addGuestBook } from "../firebase/addGuestBook";
 import AnimatedComponent from "../components/AnimatedComponent";
 import GridImage from "../components/GridImage";
 import ImageSwiper from "../components/ImageSwiper";
-import { parseDateObj } from "../utils/parseDateObj";
 import Map from "../components/Map";
 
 const MainPage = () => {
