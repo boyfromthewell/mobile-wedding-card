@@ -1,6 +1,8 @@
 import { createGlobalStyle } from "styled-components";
 import reset from "styled-reset";
 
+import "./font/font.css";
+
 const GlobalStyles = createGlobalStyle`
     ${reset};
 
@@ -8,10 +10,12 @@ const GlobalStyles = createGlobalStyle`
         display:flex;
         align-items:center;
         justify-content:center;
-        background-color:lightgray;
+        background-color:#F8C8C4;
+        font-family: "gowun dodum", sans-serif;;
     }
 
     *{
+
         &::-webkit-scrollbar {
 			width: 12px;
 		}

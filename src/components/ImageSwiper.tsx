@@ -54,7 +54,7 @@ const Wrapper = styled.div`
 
   .swiper_img {
     width: 100%;
-    height: 85dvh;
+    height: 80dvh;
     background-color: white;
   }
 
