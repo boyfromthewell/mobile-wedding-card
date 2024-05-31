@@ -36,10 +36,6 @@ const MainPage = () => {
     setSwiperIndex(-1);
   };
 
-  useEffect(() => {
-    console.log(parseDateObj(new Date()));
-  }, []);
-
   return (
     <MainPageWrapper>
       {!isOverDay ? "떠녕 뚜뇽 결혼까지" : "떠녕 뚜뇽 결혼이"}
