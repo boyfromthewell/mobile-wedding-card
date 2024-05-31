@@ -11,7 +11,7 @@ const GlobalStyles = createGlobalStyle`
         align-items:center;
         justify-content:center;
         background-color:#F8C8C4;
-        font-family: "gowun dodum", sans-serif;;
+        font-family: "gowun dodum", sans-serif;
     }
 
     *{

@@ -20,6 +20,7 @@ const Map = () => {
         defaultZoom={17}
         draggable={false}
         scrollWheel={false}
+        pinchZoom={false}
         keyboardShortcuts={false}
         disableDoubleClickZoom
         disableDoubleTapZoom
