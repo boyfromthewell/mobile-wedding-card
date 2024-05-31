@@ -6,13 +6,16 @@ import AnimatedComponent from "../components/AnimatedComponent";
 import GridImage from "../components/GridImage";
 import ImageSwiper from "../components/ImageSwiper";
 import Map from "../components/Map";
+import LocationButton from "../components/LocationButton";
+import Alert from "../components/Alert";
 
 const MainPage = () => {
   const { days, hours, minutes, seconds, isOverDay } = useCountdown(
     new Date("2024-09-21 00:00:00")
   );
 
-  const [, setLoading] = useState(false);
+  const [isSucessGuestBook, setIsSucessGuestBook] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [swiperIndex, setSwiperIndex] = useState(-1);
 
   const [guestBook, setGuestBook] = useState({ name: "", text: "", date: "" });
@@ -21,10 +24,18 @@ const MainPage = () => {
     setGuestBook((prev) => ({ ...prev, [e.target.id]: e.target.value }));
   };
 
+  const resetGuestBook = () => {
+    setGuestBook({ name: "", text: "", date: "" });
+  };
+
   const onClickSendGuestBook = async () => {
-    setLoading(true);
-    await addGuestBook(guestBook);
-    setLoading(false);
+    setIsLoading(true);
+    const isSuccess = await addGuestBook(guestBook);
+    if (isSuccess) {
+      setIsLoading(false);
+      setIsSucessGuestBook(true);
+      resetGuestBook();
+    }
   };
 
   const onClickImage = (idx: number) => {
@@ -33,6 +44,10 @@ const MainPage = () => {
 
   const onClickCloseSwiper = () => {
     setSwiperIndex(-1);
+  };
+
+  const onClickCloseAlert = () => {
+    setIsSucessGuestBook(false);
   };
 
   return (
@@ -95,6 +110,7 @@ const MainPage = () => {
       )}
 
       <Map />
+      <LocationButton />
       <p>방명록</p>
       <label>
         이름
@@ -104,7 +120,12 @@ const MainPage = () => {
         내용
         <input id="text" onChange={onChange} value={guestBook.text} />
       </label>
-      <button onClick={onClickSendGuestBook}>보내기</button>
+      {!isLoading ? (
+        <button onClick={onClickSendGuestBook}>보내기</button>
+      ) : (
+        <ProgressBar />
+      )}
+      {isSucessGuestBook && <Alert onClickCloseAlert={onClickCloseAlert} />}
     </MainPageWrapper>
   );
 };
@@ -123,34 +144,40 @@ const Box1 = styled.div`
   margin-bottom: 20px;
 `;
 
-// const ProgressBar = styled.div`
-//   width: 100%;
-//   height: 5px;
-//   background-color: #ccc;
-//   position: relative;
-//   margin-top: 10px;
+const ProgressBar = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 12px;
+  border-radius: 8px;
+  background-color: #ececec;
+  position: fixed;
+  bottom: 0;
+  overflow: hidden;
 
-//   &::before {
-//     content: "";
-//     position: absolute;
-//     width: 50%;
-//     height: 100%;
-//     background-color: #76c7c0;
-//     animation: loading 1s infinite;
-//   }
+  &::before {
+    content: "";
+    position: absolute;
+    width: 70%;
+    height: 12px;
+    border-radius: 8px;
+    background-color: #f8c8c4;
+    animation: loading 1.5s infinite ease-in-out;
+  }
 
-//   @keyframes loading {
-//     0% {
-//       left: 0%;
-//     }
-//     50% {
-//       left: 50%;
-//     }
-//     100% {
-//       left: 100%;
-//     }
-//   }
-// `;
+  @keyframes loading {
+    0% {
+      left: -50%;
+    }
+    50% {
+      left: 100%;
+    }
+    100% {
+      left: 100%;
+    }
+  }
+`;
 
 const Box = styled.div`
   display: flex;
