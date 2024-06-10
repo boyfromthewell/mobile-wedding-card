@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { useRef, useState } from "react";
 import React from "react";
-import { IMAGE } from "../mock/image";
+import { IMAGE_RESIZE } from "../mock/image_resize";
 import { motion } from "framer-motion";
 
 interface GridImageProps {
@@ -37,10 +37,11 @@ const GridImage = ({ onClickImage }: GridImageProps) => {
         <span style={{ fontSize: "1.025rem" }}>GALLARY</span>
       </motion.p>
       <ImageWrapper ref={wrapperRef}>
-        {IMAGE.slice(0, showMore ? IMAGE.length : 15).map(
+        {IMAGE_RESIZE.slice(0, showMore ? IMAGE_RESIZE.length : 15).map(
           ({ src, alt }, idx) => (
             <React.Fragment key={idx}>
               <img
+                width={"100%"}
                 className={`image${idx + 1}`}
                 src={src}
                 alt={alt}
@@ -76,6 +77,7 @@ const ImageWrapper = styled.div`
   display: grid;
   align-items: center;
   gap: 12px;
+
   grid-template-columns: repeat(3, 1fr);
   grid-template-areas:
     "a b c"
@@ -86,10 +88,11 @@ const ImageWrapper = styled.div`
     "p q rr"
     "s t u"
     "v w xx"
-    "v w yy";
+    "yy zz aa"
+    "bb cc dd"
+    "ff ee ee";
 
   img {
-    width: 100%;
     cursor: pointer;
   }
 
@@ -167,6 +170,27 @@ const ImageWrapper = styled.div`
   }
   .image25 {
     grid-area: yy;
+  }
+  .image26 {
+    grid-area: zz;
+  }
+  .image27 {
+    grid-area: aa;
+  }
+  .image28 {
+    grid-area: bb;
+  }
+  .image29 {
+    grid-area: cc;
+  }
+  .image30 {
+    grid-area: dd;
+  }
+  .image31 {
+    grid-area: ee;
+  }
+  .image32 {
+    grid-area: ff;
   }
 `;
 

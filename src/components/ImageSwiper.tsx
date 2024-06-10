@@ -43,11 +43,14 @@ export default ImageSwiper;
 
 const Wrapper = styled.div`
   width: 100%;
+  max-width: 700px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   height: 100dvh;
   position: fixed;
   z-index: 999;
-  top: 0;
-  left: 0;
+
   background-color: rgba(0, 0, 0, 0.8);
   display: flex;
   justify-content: center;
