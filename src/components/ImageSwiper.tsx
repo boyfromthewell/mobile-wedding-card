@@ -6,7 +6,7 @@ import styled from "styled-components";
 import CloseSVG from "../assets/icons/close.svg?react";
 
 import useDisableBodyScroll from "../hooks/useDisabledBodyScroll";
-import { IMAGE } from "../mock/image";
+import { IMAGE_RESIZE } from "../mock/image_resize";
 
 interface ImageSwiperProps {
   onClickCloseSwiper: () => void;
@@ -29,7 +29,7 @@ const ImageSwiper = ({ onClickCloseSwiper, swiperIndex }: ImageSwiperProps) => {
         modules={[Scrollbar]}
         className="swiper_img"
       >
-        {IMAGE.map(({ src, alt }) => (
+        {IMAGE_RESIZE.map(({ src, alt }) => (
           <SwiperSlide key={alt}>
             <SwiperImage src={src} alt={alt} />
           </SwiperSlide>
