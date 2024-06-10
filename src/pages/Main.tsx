@@ -2,12 +2,15 @@ import styled from "styled-components";
 import useCountdown from "../hooks/useCountDown";
 import React, { useState } from "react";
 import { addGuestBook } from "../firebase/addGuestBook";
-import AnimatedComponent from "../components/AnimatedComponent";
+
 import GridImage from "../components/GridImage";
 import ImageSwiper from "../components/ImageSwiper";
 import Map from "../components/Map";
 import LocationButton from "../components/LocationButton";
 import Alert from "../components/Alert";
+import MainBanner from "../components/MainBanner";
+import SubBanner from "../components/SubBanner";
+import OurInfo from "../components/OurInfo";
 
 const MainPage = () => {
   const { days, hours, minutes, seconds, isOverDay } = useCountdown(
@@ -52,6 +55,22 @@ const MainPage = () => {
 
   return (
     <MainPageWrapper>
+      <MainBanner />
+      <SubBanner />
+      <OurInfo />
+
+      <GridImage onClickImage={onClickImage} />
+
+      {swiperIndex >= 0 && (
+        <ImageSwiper
+          onClickCloseSwiper={onClickCloseSwiper}
+          swiperIndex={swiperIndex}
+        />
+      )}
+
+      <Map />
+      <LocationButton />
+
       {!isOverDay ? "떠녕 뚜뇽 결혼까지" : "떠녕 뚜뇽 결혼이"}
       <div
         style={{
@@ -66,51 +85,6 @@ const MainPage = () => {
           ? `${days}일 ${hours}시간 ${minutes}분 ${seconds}초 남았습니다~`
           : `${days}일 ${hours}시간 ${minutes}분 ${seconds}초 지났습니다~`}
       </div>
-
-      <AnimatedComponent>
-        <Box>
-          저희는 이렇게 만났어요
-          <p>사진</p>
-        </Box>
-      </AnimatedComponent>
-
-      <AnimatedComponent>
-        <Box>
-          저희는 이렇게 만났어요
-          <p>사진</p>
-        </Box>
-      </AnimatedComponent>
-
-      <AnimatedComponent>
-        <Box>
-          저희는 이렇게 만났어요
-          <p>사진</p>
-        </Box>
-      </AnimatedComponent>
-
-      <GridImage onClickImage={onClickImage} />
-
-      <Box1 />
-
-      <Box1 />
-
-      <Box1 />
-
-      <Box1 />
-
-      <Box1 />
-
-      <Box1 />
-
-      {swiperIndex >= 0 && (
-        <ImageSwiper
-          onClickCloseSwiper={onClickCloseSwiper}
-          swiperIndex={swiperIndex}
-        />
-      )}
-
-      <Map />
-      <LocationButton />
       <p>방명록</p>
       <label>
         이름
@@ -136,12 +110,6 @@ const MainPageWrapper = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-`;
-const Box1 = styled.div`
-  background-color: red;
-  width: 100%;
-  height: 200px;
-  margin-bottom: 20px;
 `;
 
 const ProgressBar = styled.div`
@@ -176,14 +144,5 @@ const ProgressBar = styled.div`
     100% {
       left: 100%;
     }
-  }
-`;
-
-const Box = styled.div`
-  display: flex;
-  flex-direction: column;
-  p {
-    width: 200px;
-    height: 200px;
   }
 `;
