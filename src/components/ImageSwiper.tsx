@@ -6,7 +6,8 @@ import styled from "styled-components";
 import CloseSVG from "../assets/icons/close.svg?react";
 
 import useDisableBodyScroll from "../hooks/useDisabledBodyScroll";
-import { IMAGE_RESIZE } from "../mock/image_resize";
+import { IMAGE_ORIGIN } from "../mock/image_origin";
+import { useState } from "react";
 
 interface ImageSwiperProps {
   onClickCloseSwiper: () => void;
@@ -16,12 +17,23 @@ interface ImageSwiperProps {
 const ImageSwiper = ({ onClickCloseSwiper, swiperIndex }: ImageSwiperProps) => {
   useDisableBodyScroll();
 
+  const [currentIndex, setCurrentIndex] = useState(0);
+
   return (
     <Wrapper>
-      <CloseSVG onClick={onClickCloseSwiper} />
+      <ButtonContainer>
+        <p>
+          {currentIndex} / {IMAGE_ORIGIN.length}
+        </p>
+        <CloseSVG onClick={onClickCloseSwiper} />
+      </ButtonContainer>
+
       <Swiper
         slidesPerView={1}
         loop
+        onActiveIndexChange={({ realIndex }) => {
+          setCurrentIndex(realIndex + 1);
+        }}
         initialSlide={swiperIndex}
         scrollbar={{
           hide: false,
@@ -29,7 +41,7 @@ const ImageSwiper = ({ onClickCloseSwiper, swiperIndex }: ImageSwiperProps) => {
         modules={[Scrollbar]}
         className="swiper_img"
       >
-        {IMAGE_RESIZE.map(({ src, alt }) => (
+        {IMAGE_ORIGIN.map(({ src, alt }) => (
           <SwiperSlide key={alt}>
             <SwiperImage src={src} alt={alt} />
           </SwiperSlide>
@@ -61,12 +73,25 @@ const Wrapper = styled.div`
     height: 80dvh;
     background-color: white;
   }
+`;
+
+const ButtonContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  top: 20px;
+
+  p {
+    margin-left: 10px;
+    color: #fff;
+    font-size: 1.225rem;
+  }
 
   svg {
-    position: absolute;
+    margin-right: 10px;
     cursor: pointer;
-    top: 12px;
-    right: 10px;
     width: 48px;
     height: 48px;
     path {
@@ -79,4 +104,5 @@ const SwiperImage = styled.img`
   width: 100%;
   height: 100%;
   object-fit: contain;
+  pointer-events: none;
 `;

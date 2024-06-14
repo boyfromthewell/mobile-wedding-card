@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import React from "react";
 import { IMAGE_RESIZE } from "../mock/image_resize";
 import { motion } from "framer-motion";
@@ -10,21 +10,13 @@ interface GridImageProps {
 
 const GridImage = ({ onClickImage }: GridImageProps) => {
   const [showMore, setShowMore] = useState(false);
-  const wrapperRef = useRef<HTMLDivElement>(null);
 
-  const onClickShowMore = () => {
-    if (wrapperRef.current) {
-      wrapperRef.current.scrollIntoView({
-        behavior: "smooth",
-      });
-      setShowMore(true);
-    }
-  };
+  const onClickShowMore = () => setShowMore(true);
 
   return (
     <Container>
-      <motion.p
-        initial={{ opacity: 0, y: 80 }}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{
@@ -33,39 +25,43 @@ const GridImage = ({ onClickImage }: GridImageProps) => {
           y: { duration: 1 },
         }}
       >
-        우리의 순간
-        <span style={{ fontSize: "1.025rem" }}>GALLARY</span>
-      </motion.p>
-      <ImageWrapper ref={wrapperRef}>
-        {IMAGE_RESIZE.slice(0, showMore ? IMAGE_RESIZE.length : 15).map(
-          ({ src, alt }, idx) => (
-            <React.Fragment key={idx}>
-              <img
-                width={"100%"}
-                className={`image${idx + 1}`}
-                src={src}
-                alt={alt}
-                onClick={() => onClickImage(idx)}
-              />
-            </React.Fragment>
-          )
+        <p>
+          우리의 순간 <span style={{ fontSize: "0.825rem" }}>GALLARY</span>
+        </p>
+
+        <ImageWrapper>
+          {IMAGE_RESIZE.slice(0, showMore ? IMAGE_RESIZE.length : 56).map(
+            ({ src, alt }, idx) => (
+              <React.Fragment key={idx}>
+                <img
+                  width={"100%"}
+                  className={alt}
+                  src={src}
+                  alt={alt}
+                  onClick={() => onClickImage(idx)}
+                />
+              </React.Fragment>
+            )
+          )}
+        </ImageWrapper>
+        {!showMore && (
+          <ShowMoreBtn onClick={onClickShowMore}>더보기</ShowMoreBtn>
         )}
-      </ImageWrapper>
-      {!showMore && <ShowMoreBtn onClick={onClickShowMore}>더보기</ShowMoreBtn>}
+      </motion.div>
     </Container>
   );
 };
 
 const Container = styled.div`
   margin-top: 130px;
+  margin-bottom: 130px;
   p {
     display: flex;
     flex-direction: column;
-    text-align: center;
-    font-size: 1.425rem;
+    align-items: center;
+    gap: 7px;
+    font-size: 1.225rem;
     color: #f98d99;
-    line-height: 2;
-    margin-bottom: 27px;
     -webkit-text-stroke: 0.2px;
   }
 `;
@@ -90,7 +86,20 @@ const ImageWrapper = styled.div`
     "v w xx"
     "yy zz aa"
     "bb cc dd"
-    "ff ee ee";
+    "ee gg hh"
+    "ff gg hh"
+    "ii jj ll"
+    "mm oo pp"
+    "qq kk ss"
+    "qq fff ss"
+    "tt uu vv"
+    "ww xxx yyy"
+    "zzz aaa bbb"
+    "ccc ddd eee"
+    "iii ggg kkk"
+    "iii hhh kkk"
+    "jjj lll mmm"
+    "nnn ooo ppp";
 
   img {
     cursor: pointer;
@@ -192,6 +201,110 @@ const ImageWrapper = styled.div`
   .image32 {
     grid-area: ff;
   }
+
+  .image33 {
+    grid-area: gg;
+  }
+  .image34 {
+    grid-area: hh;
+  }
+  .image35 {
+    grid-area: ii;
+  }
+  .image36 {
+    grid-area: jj;
+  }
+  .image37 {
+    grid-area: kk;
+  }
+  .image38 {
+    grid-area: ll;
+  }
+  .image39 {
+    grid-area: mm;
+  }
+  .image40 {
+    grid-area: oo;
+  }
+  .image41 {
+    grid-area: pp;
+  }
+  .image42 {
+    grid-area: qq;
+  }
+
+  .image44 {
+    grid-area: ss;
+  }
+  .image45 {
+    grid-area: tt;
+  }
+  .image46 {
+    grid-area: uu;
+  }
+  .image47 {
+    grid-area: vv;
+  }
+  .image48 {
+    grid-area: ww;
+  }
+  .image49 {
+    grid-area: xxx;
+  }
+  .image50 {
+    grid-area: yyy;
+  }
+  .image51 {
+    grid-area: zzz;
+  }
+  .image52 {
+    grid-area: aaa;
+  }
+  .image53 {
+    grid-area: bbb;
+  }
+  .image54 {
+    grid-area: ccc;
+  }
+  .image55 {
+    grid-area: ddd;
+  }
+  .image56 {
+    grid-area: eee;
+  }
+  .image57 {
+    grid-area: fff;
+  }
+  .image58 {
+    grid-area: ggg;
+  }
+  .image59 {
+    grid-area: hhh;
+  }
+  .image60 {
+    grid-area: iii;
+  }
+  .image61 {
+    grid-area: jjj;
+  }
+  .image62 {
+    grid-area: kkk;
+  }
+  .image63 {
+    grid-area: lll;
+  }
+  .image64 {
+    grid-area: mmm;
+  }
+  .image65 {
+    grid-area: nnn;
+  }
+  .image66 {
+    grid-area: ooo;
+  }
+  .image67 {
+    grid-area: ppp;
+  }
 `;
 
 const ShowMoreBtn = styled.button`
@@ -204,7 +317,7 @@ const ShowMoreBtn = styled.button`
   font-size: 1rem;
   border-radius: 12px;
   border: none;
-  width: 220px;
+  width: 70%;
   height: 52px;
   background-color: #fff;
   border: 2px solid #eaeaea;

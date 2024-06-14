@@ -11,6 +11,7 @@ import Alert from "../components/Alert";
 import MainBanner from "../components/MainBanner";
 import SubBanner from "../components/SubBanner";
 import OurInfo from "../components/OurInfo";
+import BottomBanner from "../components/BottomBanner";
 
 const MainPage = () => {
   const { days, hours, minutes, seconds, isOverDay } = useCountdown(
@@ -100,6 +101,7 @@ const MainPage = () => {
         <ProgressBar />
       )}
       {isSucessGuestBook && <Alert onClickCloseAlert={onClickCloseAlert} />}
+      <BottomBanner />
     </MainPageWrapper>
   );
 };

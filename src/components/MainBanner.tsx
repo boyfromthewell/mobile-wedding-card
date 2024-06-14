@@ -26,7 +26,7 @@ const MainBanner = () => {
           </Name>
           <Place>
             <p>2024년 9월 21일 토요일 오후 5시</p>
-            <p>노블발렌티 삼성점</p>
+            <p>노블발렌티 삼성점 단독홀</p>
           </Place>
         </Detail>
       </motion.div>

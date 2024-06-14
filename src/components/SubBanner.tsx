@@ -15,7 +15,7 @@ const SubBanner = () => {
         }}
       >
         소중한 분들을 초대합니다
-        <span style={{ fontSize: "1.025rem" }}>INVITATION</span>
+        <span style={{ fontSize: "0.825rem" }}>INVITATION</span>
       </motion.p>
 
       <motion.p
@@ -64,15 +64,15 @@ const Wrapper = styled.div`
   p {
     display: flex;
     flex-direction: column;
-
+    gap: 7px;
     text-align: center;
     -webkit-text-stroke: 0.2px;
     &:first-child {
-      font-size: 1.425rem;
+      font-size: 1.225rem;
       color: #f98d99;
-      line-height: 2;
       margin-bottom: 27px;
     }
+
     &:last-child {
       font-size: 1.025rem;
       line-height: 42px;

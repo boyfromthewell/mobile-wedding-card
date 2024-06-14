@@ -40,6 +40,7 @@ const ButtonContainer = styled.div`
   gap: 20px;
   width: 100%;
   justify-content: center;
+  margin-top: 20px;
 `;
 
 const LinkButton = styled.button`
@@ -48,7 +49,16 @@ const LinkButton = styled.button`
   cursor: pointer;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 7px;
+  width: 32%;
+  height: 50px;
+  color: #232426;
+  background-color: #fff;
+  border: 2px solid #eaeaea;
+  -webkit-text-stroke: 0.2px;
+  font-size: 1rem;
+  border-radius: 12px;
   img {
     width: 15px;
     height: 15px;
