@@ -16,12 +16,12 @@ const GridImage = ({ onClickImage }: GridImageProps) => {
   return (
     <Container>
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 70 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
+        viewport={{ once: false }}
         transition={{
           ease: "easeInOut",
-          duration: 2,
+          duration: 1,
           y: { duration: 1 },
         }}
       >
@@ -34,6 +34,7 @@ const GridImage = ({ onClickImage }: GridImageProps) => {
             ({ src, alt }, idx) => (
               <React.Fragment key={idx}>
                 <img
+                  loading="lazy"
                   width={"100%"}
                   className={alt}
                   src={src}
@@ -317,7 +318,7 @@ const ShowMoreBtn = styled.button`
   font-size: 1rem;
   border-radius: 12px;
   border: none;
-  width: 70%;
+  width: 50%;
   height: 52px;
   background-color: #fff;
   border: 2px solid #eaeaea;

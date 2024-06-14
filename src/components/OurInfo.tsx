@@ -5,12 +5,12 @@ import { motion } from "framer-motion";
 const OurInfo = () => {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 70 }}
+      initial={{ opacity: 0, y: 80 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
+      viewport={{ once: false }}
       transition={{
         ease: "easeInOut",
-        duration: 2,
+        duration: 1,
         y: { duration: 1 },
       }}
     >

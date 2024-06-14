@@ -51,7 +51,7 @@ const LinkButton = styled.button`
   align-items: center;
   justify-content: center;
   gap: 7px;
-  width: 32%;
+  width: 36%;
   height: 50px;
   color: #232426;
   background-color: #fff;
@@ -60,7 +60,7 @@ const LinkButton = styled.button`
   font-size: 1rem;
   border-radius: 12px;
   img {
-    width: 15px;
-    height: 15px;
+    width: 20px;
+    height: 20px;
   }
 `;

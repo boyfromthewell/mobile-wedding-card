@@ -15,6 +15,7 @@ export default BottomBanner;
 
 const Wrapper = styled.div`
   width: 100%;
+  margin-top: 190px;
   position: relative;
   height: max-content;
   img {

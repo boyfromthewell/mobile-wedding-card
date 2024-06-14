@@ -43,7 +43,7 @@ const ImageSwiper = ({ onClickCloseSwiper, swiperIndex }: ImageSwiperProps) => {
       >
         {IMAGE_ORIGIN.map(({ src, alt }) => (
           <SwiperSlide key={alt}>
-            <SwiperImage src={src} alt={alt} />
+            <SwiperImage src={src} alt={alt} loading="lazy" />
           </SwiperSlide>
         ))}
       </Swiper>

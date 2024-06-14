@@ -5,12 +5,12 @@ const SubBanner = () => {
   return (
     <Wrapper>
       <motion.p
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
+        viewport={{ once: false }}
         transition={{
           ease: "easeInOut",
-          duration: 2,
+          duration: 1,
           y: { duration: 1 },
         }}
       >
@@ -19,9 +19,9 @@ const SubBanner = () => {
       </motion.p>
 
       <motion.p
-        initial={{ opacity: 0, y: 80 }}
+        initial={{ opacity: 0, y: 60 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
+        viewport={{ once: false }}
         transition={{
           ease: "easeInOut",
           duration: 2,
