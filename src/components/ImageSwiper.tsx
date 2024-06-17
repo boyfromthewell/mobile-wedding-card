@@ -7,7 +7,6 @@ import CloseSVG from "../assets/icons/close.svg?react";
 
 import useDisableBodyScroll from "../hooks/useDisabledBodyScroll";
 import { IMAGE_ORIGIN } from "../mock/image_origin";
-import { useState } from "react";
 
 interface ImageSwiperProps {
   onClickCloseSwiper: () => void;
@@ -17,31 +16,21 @@ interface ImageSwiperProps {
 const ImageSwiper = ({ onClickCloseSwiper, swiperIndex }: ImageSwiperProps) => {
   useDisableBodyScroll();
 
-  const [currentIndex, setCurrentIndex] = useState(0);
-
   return (
     <Wrapper>
       <ButtonContainer>
-        <p>
-          {currentIndex} / {IMAGE_ORIGIN.length}
-        </p>
         <CloseSVG onClick={onClickCloseSwiper} />
       </ButtonContainer>
 
       <Swiper
         slidesPerView={1}
         loop
-        onActiveIndexChange={({ realIndex }) => {
-          setCurrentIndex(realIndex + 1);
-        }}
         initialSlide={swiperIndex}
         scrollbar={{
           hide: false,
         }}
         modules={[Scrollbar]}
         className="swiper_img"
-        observer
-        observeParents
       >
         {IMAGE_ORIGIN.map(({ src, alt }) => (
           <SwiperSlide key={alt}>
