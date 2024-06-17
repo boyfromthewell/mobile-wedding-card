@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { useState } from "react";
+import { Suspense, lazy, useState } from "react";
 import GridImage from "../components/GridImage";
-import ImageSwiper from "../components/ImageSwiper";
+
 import Map from "../components/Map";
 import MainBanner from "../components/MainBanner";
 import SubBanner from "../components/SubBanner";
@@ -10,6 +10,8 @@ import BottomBanner from "../components/BottomBanner";
 import Dday from "../components/Dday";
 import GuestBook from "../components/GuestBook";
 import Account from "../components/Account";
+
+const LazySwiper = lazy(() => import("../components/ImageSwiper"));
 
 const MainPage = () => {
   const [swiperIndex, setSwiperIndex] = useState(-1);
@@ -29,10 +31,12 @@ const MainPage = () => {
       <OurInfo />
       <GridImage onClickImage={onClickImage} />
       {swiperIndex >= 0 && (
-        <ImageSwiper
-          onClickCloseSwiper={onClickCloseSwiper}
-          swiperIndex={swiperIndex}
-        />
+        <Suspense>
+          <LazySwiper
+            onClickCloseSwiper={onClickCloseSwiper}
+            swiperIndex={swiperIndex}
+          />
+        </Suspense>
       )}
       <Map />
       <Dday />
