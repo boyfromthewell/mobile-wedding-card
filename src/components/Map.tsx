@@ -15,7 +15,7 @@ const Map = () => {
     <motion.div
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: false }}
+      viewport={{ once: true }}
       transition={{
         ease: "easeInOut",
         duration: 1,

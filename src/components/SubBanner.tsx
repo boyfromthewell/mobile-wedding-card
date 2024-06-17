@@ -7,7 +7,7 @@ const SubBanner = () => {
       <motion.p
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: false }}
+        viewport={{ once: true }}
         transition={{
           ease: "easeInOut",
           duration: 1,
@@ -21,14 +21,14 @@ const SubBanner = () => {
       <motion.p
         initial={{ opacity: 0, y: 60 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: false }}
+        viewport={{ once: true }}
         transition={{
           ease: "easeInOut",
           duration: 2,
           y: { duration: 1 },
         }}
       >
-        <p>
+        <Intro>
           언제나 품에 안길 것 같기만 하던
           <br />
           소중한 두 사람이
@@ -45,7 +45,7 @@ const SubBanner = () => {
           함께 축복해주시면
           <br />
           더없는 기쁨으로 간직하겠습니다.
-        </p>
+        </Intro>
       </motion.p>
     </Wrapper>
   );
@@ -72,12 +72,12 @@ const Wrapper = styled.div`
       color: #f98d99;
       margin-bottom: 27px;
     }
-
-    &:last-child {
-      font-size: 1.025rem;
-      line-height: 42px;
-      color: #47494d;
-      font-weight: 500;
-    }
   }
+`;
+
+const Intro = styled.span`
+  font-size: 1.025rem;
+  line-height: 42px;
+  color: #47494d;
+  font-weight: 500;
 `;

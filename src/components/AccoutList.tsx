@@ -33,7 +33,7 @@ const AccountList = ({ type, accounts, svg }: AccountListProps) => {
       </NavContainer>
       <Account $isOpen={isOpen}>
         {accounts?.map(({ name, bank, num }) => (
-          <Info>
+          <Info key={name}>
             <NameAndBank>
               <p>{name}</p>
               <p>
