@@ -40,6 +40,8 @@ const ImageSwiper = ({ onClickCloseSwiper, swiperIndex }: ImageSwiperProps) => {
         }}
         modules={[Scrollbar]}
         className="swiper_img"
+        touchStartPreventDefault={false}
+        touchMoveStopPropagation
       >
         {IMAGE_ORIGIN.map(({ src, alt }) => (
           <SwiperSlide key={alt}>
