@@ -31,6 +31,8 @@ const ImageSwiper = ({ onClickCloseSwiper, swiperIndex }: ImageSwiperProps) => {
         }}
         modules={[Scrollbar]}
         className="swiper_img"
+        touchStartPreventDefault
+        touchMoveStopPropagation
       >
         {IMAGE_ORIGIN.map(({ src, alt }) => (
           <SwiperSlide key={alt}>
@@ -50,7 +52,7 @@ const Wrapper = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  height: 100dvh;
+  height: 100vh;
   position: fixed;
   z-index: 999;
 
