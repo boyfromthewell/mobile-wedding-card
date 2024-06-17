@@ -7,7 +7,6 @@ import CloseSVG from "../assets/icons/close.svg?react";
 
 import { IMAGE_ORIGIN } from "../mock/image_origin";
 import useDisableBodyScroll from "../hooks/useDisabledBodyScroll";
-import { useEffect } from "react";
 
 interface ImageSwiperProps {
   onClickCloseSwiper: () => void;
