@@ -59,8 +59,9 @@ const Wrapper = styled.div`
   align-items: center;
 
   .swiper_img {
-    width: 100%;
-    height: 80dvh;
+    max-width: 100%;
+    max-height: 100%;
+    touch-action: pan-y;
     background-color: white;
   }
 `;
