@@ -7,6 +7,7 @@ import CloseSVG from "../assets/icons/close.svg?react";
 
 import { IMAGE_ORIGIN } from "../mock/image_origin";
 import useDisableBodyScroll from "../hooks/useDisabledBodyScroll";
+import { useEffect } from "react";
 
 interface ImageSwiperProps {
   onClickCloseSwiper: () => void;
@@ -15,6 +16,21 @@ interface ImageSwiperProps {
 
 const ImageSwiper = ({ onClickCloseSwiper, swiperIndex }: ImageSwiperProps) => {
   useDisableBodyScroll();
+
+  const preventClose = (e: BeforeUnloadEvent) => {
+    e.preventDefault();
+    e.returnValue = "";
+  };
+
+  useEffect(() => {
+    (() => {
+      window.addEventListener("beforeunload", preventClose);
+    })();
+    return () => {
+      window.removeEventListener("beforeunload", preventClose);
+    };
+  }, []);
+
   return (
     <Wrapper>
       <ButtonContainer>
