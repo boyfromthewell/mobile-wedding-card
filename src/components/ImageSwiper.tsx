@@ -25,6 +25,7 @@ const ImageSwiper = ({ onClickCloseSwiper, swiperIndex }: ImageSwiperProps) => {
         scrollbar={{
           hide: false,
         }}
+        speed={1100}
         modules={[Scrollbar]}
         className="swiper_img"
         touchMoveStopPropagation
@@ -62,6 +63,7 @@ const Wrapper = styled.div`
   .swiper_img {
     width: 100%;
     height: 75%;
+    z-index: 1200;
     background-color: white;
   }
   .swiper-slide {
