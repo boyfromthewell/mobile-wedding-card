@@ -30,7 +30,7 @@ const ImageSwiper = ({ onClickCloseSwiper, swiperIndex }: ImageSwiperProps) => {
       >
         {IMAGE_ORIGIN.map(({ src, alt }) => (
           <SwiperSlide key={alt}>
-            <SwiperImage src={src} alt={alt} />
+            <SwiperImage src={src} alt={alt} loading="lazy" />
           </SwiperSlide>
         ))}
       </Swiper>
@@ -57,10 +57,13 @@ const Wrapper = styled.div`
 
   .swiper_img {
     width: 100%;
-    height: 80%;
+    height: 75%;
     background-color: white;
   }
   .swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: auto;
   }
 `;
