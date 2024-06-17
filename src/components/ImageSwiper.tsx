@@ -17,20 +17,6 @@ interface ImageSwiperProps {
 const ImageSwiper = ({ onClickCloseSwiper, swiperIndex }: ImageSwiperProps) => {
   useDisableBodyScroll();
 
-  const preventClose = (e: BeforeUnloadEvent) => {
-    e.preventDefault();
-    e.returnValue = "";
-  };
-
-  useEffect(() => {
-    (() => {
-      window.addEventListener("beforeunload", preventClose);
-    })();
-    return () => {
-      window.removeEventListener("beforeunload", preventClose);
-    };
-  }, []);
-
   return (
     <Wrapper>
       <ButtonContainer>
@@ -76,7 +62,7 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-
+  overscroll-behavior: none;
   .swiper_img {
     width: 100%;
     height: 75%;
