@@ -6,6 +6,7 @@ import styled from "styled-components";
 import CloseSVG from "../assets/icons/close.svg?react";
 
 import { IMAGE_ORIGIN } from "../mock/image_origin";
+import useDisableBodyScroll from "../hooks/useDisabledBodyScroll";
 
 interface ImageSwiperProps {
   onClickCloseSwiper: () => void;
@@ -13,6 +14,7 @@ interface ImageSwiperProps {
 }
 
 const ImageSwiper = ({ onClickCloseSwiper, swiperIndex }: ImageSwiperProps) => {
+  useDisableBodyScroll();
   return (
     <Wrapper>
       <ButtonContainer>
@@ -25,7 +27,6 @@ const ImageSwiper = ({ onClickCloseSwiper, swiperIndex }: ImageSwiperProps) => {
         scrollbar={{
           hide: false,
         }}
-        speed={1100}
         modules={[Scrollbar]}
         className="swiper_img"
         touchMoveStopPropagation

@@ -28,27 +28,24 @@ const GridImage = ({ onClickImage }: GridImageProps) => {
         <p>
           우리의 순간 <span style={{ fontSize: "0.825rem" }}>GALLARY</span>
         </p>
-
-        <ImageWrapper>
-          {IMAGE_RESIZE.slice(0, showMore ? IMAGE_RESIZE.length : 56).map(
-            ({ src, alt }, idx) => (
-              <React.Fragment key={idx}>
-                <img
-                  loading="lazy"
-                  width={"100%"}
-                  className={alt}
-                  src={src}
-                  alt={alt}
-                  onClick={() => onClickImage(idx)}
-                />
-              </React.Fragment>
-            )
-          )}
-        </ImageWrapper>
-        {!showMore && (
-          <ShowMoreBtn onClick={onClickShowMore}>더보기</ShowMoreBtn>
-        )}
       </motion.div>
+      <ImageWrapper>
+        {IMAGE_RESIZE.slice(0, showMore ? IMAGE_RESIZE.length : 56).map(
+          ({ src, alt }, idx) => (
+            <React.Fragment key={idx}>
+              <img
+                loading="lazy"
+                width={"100%"}
+                className={alt}
+                src={src}
+                alt={alt}
+                onClick={() => onClickImage(idx)}
+              />
+            </React.Fragment>
+          )
+        )}
+      </ImageWrapper>
+      {!showMore && <ShowMoreBtn onClick={onClickShowMore}>더보기</ShowMoreBtn>}
     </Container>
   );
 };
