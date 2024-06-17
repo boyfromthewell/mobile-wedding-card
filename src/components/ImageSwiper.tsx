@@ -21,15 +21,12 @@ const ImageSwiper = ({ onClickCloseSwiper, swiperIndex }: ImageSwiperProps) => {
 
       <Swiper
         slidesPerView={1}
-        loop
         initialSlide={swiperIndex}
         scrollbar={{
           hide: false,
         }}
         modules={[Scrollbar]}
         className="swiper_img"
-        touchStartPreventDefault
-        touchMoveStopPropagation
       >
         {IMAGE_ORIGIN.map(({ src, alt }) => (
           <SwiperSlide key={alt}>
@@ -59,11 +56,12 @@ const Wrapper = styled.div`
   align-items: center;
 
   .swiper_img {
-    max-width: 100%;
-    max-height: 100%;
-    touch-action: pan-y;
-
+    width: 100%;
+    height: 75%;
     background-color: white;
+  }
+  .swiper-slide {
+    height: auto;
   }
 `;
 
