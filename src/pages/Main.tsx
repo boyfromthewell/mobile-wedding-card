@@ -16,6 +16,9 @@ const LazySwiper = lazy(() => import("../components/ImageSwiper"));
 
 const MainPage = () => {
   const [swiperIndex, setSwiperIndex] = useState(-1);
+  const [showMore, setShowMore] = useState(false);
+
+  const onClickShowMore = () => setShowMore(true);
 
   const onClickImage = (idx: number) => {
     setSwiperIndex(idx);
@@ -31,12 +34,17 @@ const MainPage = () => {
       <SubBanner />
       <OurInfo />
       <StickySlider />
-      <GridImage onClickImage={onClickImage} />
+      <GridImage
+        onClickImage={onClickImage}
+        onClickShowMore={onClickShowMore}
+        isShowMore={showMore}
+      />
       <Suspense fallback={null}>
         {swiperIndex >= 0 && (
           <LazySwiper
             onClickCloseSwiper={onClickCloseSwiper}
             swiperIndex={swiperIndex}
+            isShowMore={showMore}
           />
         )}
       </Suspense>

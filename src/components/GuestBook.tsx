@@ -116,7 +116,7 @@ const GuestBook = () => {
 export default GuestBook;
 
 const Title = styled.div`
-  margin-top: 130px;
+  margin-top: 200px;
   p {
     display: flex;
     flex-direction: column;

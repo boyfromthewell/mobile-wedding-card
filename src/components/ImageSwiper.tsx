@@ -11,9 +11,14 @@ import useDisableBodyScroll from "../hooks/useDisabledBodyScroll";
 interface ImageSwiperProps {
   onClickCloseSwiper: () => void;
   swiperIndex: number;
+  isShowMore: boolean;
 }
 
-const ImageSwiper = ({ onClickCloseSwiper, swiperIndex }: ImageSwiperProps) => {
+const ImageSwiper = ({
+  onClickCloseSwiper,
+  swiperIndex,
+  isShowMore,
+}: ImageSwiperProps) => {
   useDisableBodyScroll();
 
   return (
@@ -23,6 +28,7 @@ const ImageSwiper = ({ onClickCloseSwiper, swiperIndex }: ImageSwiperProps) => {
       </ButtonContainer>
 
       <Swiper
+        loop
         slidesPerView={1}
         initialSlide={swiperIndex}
         scrollbar={{
@@ -30,16 +36,15 @@ const ImageSwiper = ({ onClickCloseSwiper, swiperIndex }: ImageSwiperProps) => {
         }}
         modules={[Scrollbar]}
         className="swiper_img"
-        touchMoveStopPropagation
-        preventClicks
-        preventClicksPropagation
-        preventInteractionOnTransition
+        allowTouchMove
       >
-        {IMAGE_ORIGIN.map(({ src, alt }) => (
-          <SwiperSlide key={alt}>
-            <SwiperImage src={src} alt={alt} loading="lazy" />
-          </SwiperSlide>
-        ))}
+        {IMAGE_ORIGIN.slice(0, isShowMore ? IMAGE_ORIGIN.length : 33).map(
+          ({ src, alt }) => (
+            <SwiperSlide key={alt}>
+              <SwiperImage src={src} alt={alt} loading="lazy" />
+            </SwiperSlide>
+          )
+        )}
       </Swiper>
     </Wrapper>
   );
@@ -66,23 +71,28 @@ const Wrapper = styled.div`
     width: 100%;
     height: 75%;
     z-index: 1200;
-    background-color: white;
+    background-color: transparent;
   }
   .swiper-slide {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: auto;
+  }
+  .swiper-scrollbar {
+    background-color: #efebe0;
+    .swiper-scrollbar-drag {
+      background-color: #fb8da0;
+    }
   }
 `;
 
 const ButtonContainer = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   position: absolute;
   width: 100%;
-  top: 20px;
+  top: 27px;
 
   p {
     margin-left: 10px;

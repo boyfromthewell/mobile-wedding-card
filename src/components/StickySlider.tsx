@@ -26,7 +26,9 @@ const StickySlider = () => {
           (currentScrollY - startHeightInPx) /
           (endHeightInPx - startHeightInPx);
 
-        element.style.transform = `translateX(-${scrollRatio * 80}%)`;
+        element.style.transform = `translateX(-${Math.floor(
+          scrollRatio * 80
+        )}%)`;
       }
     };
 
@@ -36,9 +38,13 @@ const StickySlider = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
   return (
     <Wrapper>
       <StickyContainer>
+        <Title>
+          <p>우리의 이야기</p>
+        </Title>
         <CardImageConatiner ref={cardContainerRef}>
           <Box />
           <Box />
@@ -68,7 +74,15 @@ const StickyContainer = styled.div`
   align-items: center;
   top: 0;
   overflow-x: hidden;
-  background-color: blue;
+`;
+
+const Title = styled.div`
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 `;
 
 const CardImageConatiner = styled.div`

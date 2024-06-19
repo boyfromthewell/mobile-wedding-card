@@ -54,7 +54,7 @@ const DdayContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 120px;
+  margin-top: 200px;
 `;
 
 const Divider = styled.div`
