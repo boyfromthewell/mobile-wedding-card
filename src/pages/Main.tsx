@@ -10,6 +10,7 @@ import BottomBanner from "../components/BottomBanner";
 import Dday from "../components/Dday";
 import GuestBook from "../components/GuestBook";
 import Account from "../components/Account";
+import StickySlider from "../components/StickySlider";
 
 const LazySwiper = lazy(() => import("../components/ImageSwiper"));
 
@@ -29,15 +30,16 @@ const MainPage = () => {
       <MainBanner />
       <SubBanner />
       <OurInfo />
+      <StickySlider />
       <GridImage onClickImage={onClickImage} />
-      {swiperIndex >= 0 && (
-        <Suspense>
+      <Suspense fallback={null}>
+        {swiperIndex >= 0 && (
           <LazySwiper
             onClickCloseSwiper={onClickCloseSwiper}
             swiperIndex={swiperIndex}
           />
-        </Suspense>
-      )}
+        )}
+      </Suspense>
       <Map />
       <Dday />
       <GuestBook />

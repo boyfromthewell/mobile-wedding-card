@@ -1,33 +1,33 @@
 import Image1 from "/1.jpg";
-import Image2 from "/2.jpg";
+
 import Image3 from "/3.jpg";
-import Image4 from "/4.jpg";
+
 import Image5 from "/5.jpg";
 import Image6 from "/6.jpg";
-import Image7 from "/7.jpg";
+
 import Image8 from "/8.jpg";
 import Image9 from "/9.jpg";
 import Image10 from "/10.jpg";
 import Image11 from "/11.jpg";
 import Image12 from "/12.jpg";
 import Image13 from "/13.jpg";
-import Image14 from "/14.jpg";
+
 import Image15 from "/15.jpg";
 import Image16 from "/16.jpg";
-import Image17 from "/17.jpg";
+
 import Image18 from "/18.jpg";
 import Image19 from "/19.jpg";
-import Image20 from "/20.jpg";
+
 import Image21 from "/21.jpg";
 import Image22 from "/22.jpg";
 import Image23 from "/23.jpg";
 import Image24 from "/24.jpg";
-import Image25 from "/25.jpg";
+
 import Image26 from "/26.jpg";
 import Image27 from "/27.jpg";
 import Image28 from "/28.jpg";
 import Image29 from "/29.jpg";
-import Image30 from "/30.jpg";
+
 import Image31 from "/31.jpg";
 import Image32 from "/32.jpg";
 import Image33 from "/33.jpg";
@@ -42,12 +42,12 @@ import Image41 from "/41.jpg";
 import Image42 from "/42.jpg";
 import Image44 from "/44.jpg";
 import Image45 from "/45.jpg";
-import Image46 from "/46.jpg";
+
 import Image47 from "/47.jpg";
 import Image48 from "/48.jpg";
-import Image49 from "/49.jpg";
+
 import Image50 from "/50.jpg";
-import Image51 from "/51.jpg";
+
 import Image52 from "/52.jpg";
 import Image53 from "/53.jpg";
 import Image54 from "/54.jpg";
@@ -58,24 +58,24 @@ import Image58 from "/58.jpg";
 import Image59 from "/59.jpg";
 import Image60 from "/60.jpg";
 import Image61 from "/61.jpg";
-import Image62 from "/62.jpg";
+
 import Image63 from "/63.jpg";
 import Image64 from "/64.jpg";
-import Image65 from "/65.jpg";
+
 import Image66 from "/66.jpg";
 import Image67 from "/67.jpg";
 import Image68 from "/68.jpg";
 import Image69 from "/69.jpg";
 import Image70 from "/70.jpg";
-import Image71 from "/71.jpg";
+
 import Image72 from "/72.jpg";
 import Image73 from "/73.jpg";
 import Image75 from "/75.jpg";
-import Image76 from "/76.jpg";
+
 import Image77 from "/77.jpg";
 import Image78 from "/78.jpg";
 import Image79 from "/79.jpg";
-import Image80 from "/80.jpg";
+
 import Image81 from "/81.jpg";
 import Image82 from "/82.jpg";
 import Image83 from "/83.jpg";
@@ -85,18 +85,12 @@ export const IMAGE_RESIZE = [
     src: Image1,
     alt: "image1",
   },
-  {
-    src: Image2,
-    alt: "image2",
-  },
+
   {
     src: Image3,
     alt: "image3",
   },
-  {
-    src: Image4,
-    alt: "image4",
-  },
+
   {
     src: Image5,
     alt: "image5",
@@ -105,10 +99,7 @@ export const IMAGE_RESIZE = [
     src: Image6,
     alt: "image6",
   },
-  {
-    src: Image7,
-    alt: "image7",
-  },
+
   {
     src: Image8,
     alt: "image8",
@@ -133,10 +124,7 @@ export const IMAGE_RESIZE = [
     src: Image13,
     alt: "image13",
   },
-  {
-    src: Image14,
-    alt: "image14",
-  },
+
   {
     src: Image15,
     alt: "image15",
@@ -145,10 +133,7 @@ export const IMAGE_RESIZE = [
     src: Image16,
     alt: "image16",
   },
-  {
-    src: Image17,
-    alt: "image17",
-  },
+
   {
     src: Image18,
     alt: "image18",
@@ -157,10 +142,7 @@ export const IMAGE_RESIZE = [
     src: Image19,
     alt: "image19",
   },
-  {
-    src: Image20,
-    alt: "image20",
-  },
+
   {
     src: Image21,
     alt: "image21",
@@ -177,10 +159,7 @@ export const IMAGE_RESIZE = [
     src: Image24,
     alt: "image24",
   },
-  {
-    src: Image25,
-    alt: "image25",
-  },
+
   {
     src: Image26,
     alt: "image26",
@@ -197,10 +176,7 @@ export const IMAGE_RESIZE = [
     src: Image29,
     alt: "image29",
   },
-  {
-    src: Image30,
-    alt: "image30",
-  },
+
   {
     src: Image31,
     alt: "image31",
@@ -258,10 +234,7 @@ export const IMAGE_RESIZE = [
     src: Image45,
     alt: "image45",
   },
-  {
-    src: Image46,
-    alt: "image46",
-  },
+
   {
     src: Image47,
     alt: "image47",
@@ -270,18 +243,12 @@ export const IMAGE_RESIZE = [
     src: Image48,
     alt: "image48",
   },
-  {
-    src: Image49,
-    alt: "image49",
-  },
+
   {
     src: Image50,
     alt: "image50",
   },
-  {
-    src: Image51,
-    alt: "image51",
-  },
+
   {
     src: Image52,
     alt: "image52",
@@ -322,10 +289,7 @@ export const IMAGE_RESIZE = [
     src: Image61,
     alt: "image61",
   },
-  {
-    src: Image62,
-    alt: "image62",
-  },
+
   {
     src: Image63,
     alt: "image63",
@@ -334,10 +298,7 @@ export const IMAGE_RESIZE = [
     src: Image64,
     alt: "image64",
   },
-  {
-    src: Image65,
-    alt: "image65",
-  },
+
   {
     src: Image66,
     alt: "image66",
@@ -358,10 +319,7 @@ export const IMAGE_RESIZE = [
     src: Image70,
     alt: "image70",
   },
-  {
-    src: Image71,
-    alt: "image71",
-  },
+
   {
     src: Image72,
     alt: "image72",
@@ -374,10 +332,7 @@ export const IMAGE_RESIZE = [
     src: Image75,
     alt: "image75",
   },
-  {
-    src: Image76,
-    alt: "image76",
-  },
+
   {
     src: Image77,
     alt: "image77",
@@ -386,10 +341,7 @@ export const IMAGE_RESIZE = [
     src: Image79,
     alt: "image79",
   },
-  {
-    src: Image80,
-    alt: "image80",
-  },
+
   {
     src: Image81,
     alt: "image81",

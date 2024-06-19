@@ -1,33 +1,32 @@
 import Image1 from "/origin/1_o.webp";
-import Image2 from "/origin/2_o.webp";
 import Image3 from "/origin/3_o.webp";
-import Image4 from "/origin/4_o.webp";
+
 import Image5 from "/origin/5_o.webp";
 import Image6 from "/origin/6_o.webp";
-import Image7 from "/origin/7_o.webp";
+
 import Image8 from "/origin/8_o.webp";
 import Image9 from "/origin/9_o.webp";
 import Image10 from "/origin/10_o.webp";
 import Image11 from "/origin/11_o.webp";
 import Image12 from "/origin/12_o.webp";
 import Image13 from "/origin/13_o.webp";
-import Image14 from "/origin/14_o.webp";
+
 import Image15 from "/origin/15_o.webp";
 import Image16 from "/origin/16_o.webp";
-import Image17 from "/origin/17_o.webp";
+
 import Image18 from "/origin/18_o.webp";
 import Image19 from "/origin/19_o.webp";
-import Image20 from "/origin/20_o.webp";
+
 import Image21 from "/origin/21_o.webp";
 import Image22 from "/origin/22_o.webp";
 import Image23 from "/origin/23_o.webp";
 import Image24 from "/origin/24_o.webp";
-import Image25 from "/origin/25_o.webp";
+
 import Image26 from "/origin/26_o.webp";
 import Image27 from "/origin/27_o.webp";
 import Image28 from "/origin/28_o.webp";
 import Image29 from "/origin/29_o.webp";
-import Image30 from "/origin/30_o.webp";
+
 import Image31 from "/origin/31_o.webp";
 import Image32 from "/origin/32_o.webp";
 import Image33 from "/origin/33_o.webp";
@@ -42,12 +41,12 @@ import Image41 from "/origin/41_o.webp";
 import Image42 from "/origin/42_o.webp";
 import Image44 from "/origin/44_o.webp";
 import Image45 from "/origin/45_o.webp";
-import Image46 from "/origin/46_o.webp";
+
 import Image47 from "/origin/47_o.webp";
 import Image48 from "/origin/48_o.webp";
-import Image49 from "/origin/49_o.webp";
+
 import Image50 from "/origin/50_o.webp";
-import Image51 from "/origin/51_o.webp";
+
 import Image52 from "/origin/52_o.webp";
 import Image53 from "/origin/53_o.webp";
 import Image54 from "/origin/54_o.webp";
@@ -58,24 +57,24 @@ import Image58 from "/origin/58_o.webp";
 import Image59 from "/origin/59_o.webp";
 import Image60 from "/origin/60_o.webp";
 import Image61 from "/origin/61_o.webp";
-import Image62 from "/origin/62_o.webp";
+
 import Image63 from "/origin/63_o.webp";
 import Image64 from "/origin/64_o.webp";
-import Image65 from "/origin/65_o.webp";
+
 import Image66 from "/origin/66_o.webp";
 import Image67 from "/origin/67_o.webp";
 import Image68 from "/origin/68_o.webp";
 import Image69 from "/origin/69_o.webp";
 import Image70 from "/origin/70_o.webp";
-import Image71 from "/origin/71_o.webp";
+
 import Image72 from "/origin/72_o.webp";
 import Image73 from "/origin/73_o.webp";
 import Image75 from "/origin/75_o.webp";
-import Image76 from "/origin/76_o.webp";
+
 import Image77 from "/origin/77_o.webp";
 import Image78 from "/origin/78_o.webp";
 import Image79 from "/origin/79_o.webp";
-import Image80 from "/origin/80_o.webp";
+
 import Image81 from "/origin/81_o.webp";
 import Image82 from "/origin/82_o.webp";
 import Image83 from "/origin/83_o.webp";
@@ -85,18 +84,12 @@ export const IMAGE_ORIGIN = [
     src: Image1,
     alt: "image1",
   },
-  {
-    src: Image2,
-    alt: "image2",
-  },
+
   {
     src: Image3,
     alt: "image3",
   },
-  {
-    src: Image4,
-    alt: "image4",
-  },
+
   {
     src: Image5,
     alt: "image5",
@@ -105,10 +98,7 @@ export const IMAGE_ORIGIN = [
     src: Image6,
     alt: "image6",
   },
-  {
-    src: Image7,
-    alt: "image7",
-  },
+
   {
     src: Image8,
     alt: "image8",
@@ -133,10 +123,7 @@ export const IMAGE_ORIGIN = [
     src: Image13,
     alt: "image13",
   },
-  {
-    src: Image14,
-    alt: "image14",
-  },
+
   {
     src: Image15,
     alt: "image15",
@@ -145,10 +132,7 @@ export const IMAGE_ORIGIN = [
     src: Image16,
     alt: "image16",
   },
-  {
-    src: Image17,
-    alt: "image17",
-  },
+
   {
     src: Image18,
     alt: "image18",
@@ -157,10 +141,7 @@ export const IMAGE_ORIGIN = [
     src: Image19,
     alt: "image19",
   },
-  {
-    src: Image20,
-    alt: "image20",
-  },
+
   {
     src: Image21,
     alt: "image21",
@@ -177,10 +158,7 @@ export const IMAGE_ORIGIN = [
     src: Image24,
     alt: "image24",
   },
-  {
-    src: Image25,
-    alt: "image25",
-  },
+
   {
     src: Image26,
     alt: "image26",
@@ -197,10 +175,7 @@ export const IMAGE_ORIGIN = [
     src: Image29,
     alt: "image29",
   },
-  {
-    src: Image30,
-    alt: "image30",
-  },
+
   {
     src: Image31,
     alt: "image31",
@@ -258,10 +233,7 @@ export const IMAGE_ORIGIN = [
     src: Image45,
     alt: "image45",
   },
-  {
-    src: Image46,
-    alt: "image46",
-  },
+
   {
     src: Image47,
     alt: "image47",
@@ -270,18 +242,12 @@ export const IMAGE_ORIGIN = [
     src: Image48,
     alt: "image48",
   },
-  {
-    src: Image49,
-    alt: "image49",
-  },
+
   {
     src: Image50,
     alt: "image50",
   },
-  {
-    src: Image51,
-    alt: "image51",
-  },
+
   {
     src: Image52,
     alt: "image52",
@@ -322,10 +288,7 @@ export const IMAGE_ORIGIN = [
     src: Image61,
     alt: "image61",
   },
-  {
-    src: Image62,
-    alt: "image62",
-  },
+
   {
     src: Image63,
     alt: "image63",
@@ -334,10 +297,7 @@ export const IMAGE_ORIGIN = [
     src: Image64,
     alt: "image64",
   },
-  {
-    src: Image65,
-    alt: "image65",
-  },
+
   {
     src: Image66,
     alt: "image66",
@@ -358,10 +318,7 @@ export const IMAGE_ORIGIN = [
     src: Image70,
     alt: "image70",
   },
-  {
-    src: Image71,
-    alt: "image71",
-  },
+
   {
     src: Image72,
     alt: "image72",
@@ -374,10 +331,7 @@ export const IMAGE_ORIGIN = [
     src: Image75,
     alt: "image75",
   },
-  {
-    src: Image76,
-    alt: "image76",
-  },
+
   {
     src: Image77,
     alt: "image77",
@@ -386,10 +340,7 @@ export const IMAGE_ORIGIN = [
     src: Image79,
     alt: "image79",
   },
-  {
-    src: Image80,
-    alt: "image80",
-  },
+
   {
     src: Image81,
     alt: "image81",

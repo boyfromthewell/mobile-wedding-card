@@ -30,13 +30,13 @@ const GridImage = ({ onClickImage }: GridImageProps) => {
         </p>
       </motion.div>
       <ImageWrapper>
-        {IMAGE_RESIZE.slice(0, showMore ? IMAGE_RESIZE.length : 56).map(
+        {IMAGE_RESIZE.slice(0, showMore ? IMAGE_RESIZE.length : 28).map(
           ({ src, alt }, idx) => (
             <React.Fragment key={idx}>
               <img
                 loading="lazy"
                 width={"100%"}
-                className={alt}
+                className={`image${idx + 1}`}
                 src={src}
                 alt={alt}
                 onClick={() => onClickImage(idx)}
