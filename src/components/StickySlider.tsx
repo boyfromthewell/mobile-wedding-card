@@ -28,9 +28,7 @@ const StickySlider = () => {
             (currentScrollY - startHeightInPx) /
             (endHeightInPx - startHeightInPx);
 
-          element.style.transform = `translateX(-${Math.floor(
-            scrollRatio * 80
-          )}%)`;
+          element.style.transform = `translateX(-${scrollRatio * 80}%)`;
         }
       });
     };
@@ -92,7 +90,7 @@ const CardImageConatiner = styled.div`
   display: flex;
   margin-left: 50%;
   width: max-content;
-  gap: 120px;
+  gap: 500px;
 `;
 
 const Box = styled.div`
