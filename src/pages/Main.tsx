@@ -11,6 +11,7 @@ import Dday from "../components/Dday";
 import GuestBook from "../components/GuestBook";
 import Account from "../components/Account";
 import StickySlider from "../components/StickySlider";
+import Notice from "../components/Notice";
 
 const LazySwiper = lazy(() => import("../components/ImageSwiper"));
 
@@ -51,6 +52,7 @@ const MainPage = () => {
       <Map />
       <Dday />
       <GuestBook />
+      <Notice />
       <Account />
       <BottomBanner />
     </MainPageWrapper>
