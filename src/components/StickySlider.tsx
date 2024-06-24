@@ -89,7 +89,7 @@ const Wrapper = styled.div`
 
 const StickyContainer = styled.div`
   width: 100%;
-  height: 100dvh;
+  height: 100vh;
   position: sticky;
   display: flex;
   align-items: center;
