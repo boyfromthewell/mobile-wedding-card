@@ -54,7 +54,7 @@ const SubBanner = () => {
 export default SubBanner;
 
 const Wrapper = styled.div`
-  margin-top: 80px;
+  margin-top: 190px;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -70,7 +70,7 @@ const Wrapper = styled.div`
     &:first-child {
       font-size: 1.225rem;
       color: #f98d99;
-      margin-bottom: 27px;
+      margin-bottom: 52px;
     }
   }
 `;

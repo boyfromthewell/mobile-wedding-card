@@ -64,6 +64,7 @@ export default StickySlider;
 const Wrapper = styled.div`
   width: 100%;
   height: 450vh;
+  margin-top: 210px;
   position: relative;
 `;
 
@@ -81,14 +82,15 @@ const Title = styled.div`
   display: flex;
   flex-direction: column;
   position: absolute;
-  top: 15%;
+  top: 50px;
   left: 50%;
   transform: translate(-50%, -50%);
 `;
 
 const CardImageConatiner = styled.div`
+  position: absolute;
+  left: 33%;
   display: flex;
-  margin-left: 50%;
   width: max-content;
   gap: 500px;
 `;

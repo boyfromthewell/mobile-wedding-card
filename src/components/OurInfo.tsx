@@ -32,7 +32,7 @@ const OurInfo = () => {
 export default OurInfo;
 
 const Wrapper = styled.div`
-  margin-top: 97px;
+  margin-top: 190px;
   margin-bottom: 20px;
   display: flex;
   flex-direction: column;
