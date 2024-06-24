@@ -111,6 +111,7 @@ const CardImageConatiner = styled.div`
   left: 33%;
   display: flex;
   width: max-content;
+  transition: transform 0.2s ease-in-out;
 `;
 
 const Image = styled.img`
