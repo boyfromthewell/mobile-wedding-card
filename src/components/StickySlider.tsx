@@ -1,5 +1,8 @@
 import { useEffect, useRef } from "react";
 import styled from "styled-components";
+import Image1 from "/temp1.jpg";
+import Image2 from "/temp2.jpg";
+import Image3 from "/temp3.jpg";
 
 const StickySlider = () => {
   const cardContainerRef = useRef<HTMLDivElement>(null);
@@ -47,12 +50,28 @@ const StickySlider = () => {
           <p>우리의 이야기</p>
         </Title>
         <CardImageConatiner ref={cardContainerRef}>
-          <Box />
-          <Box />
-          <Box />
-          <Box />
-          <Box />
-          <Box />
+          <ImageContainer>
+            <ImageX src={Image1} alt="image1" />
+            <Border>
+              <Text>저는 누워있는걸 잘하는 꼼도리에요</Text>
+            </Border>
+          </ImageContainer>
+          <ImageContainer>
+            <Image src={Image2} alt="image1" />
+            <Border>
+              <Text>그치만 요리도 잘해요</Text>
+            </Border>
+          </ImageContainer>
+          <ImageContainer>
+            <Image src={Image3} alt="image1" />
+            <Border>
+              <Text>
+                데이식스를 좋아하지만
+                <br />
+                땀똠이도 사랑해요
+              </Text>
+            </Border>
+          </ImageContainer>
         </CardImageConatiner>
       </StickyContainer>
     </Wrapper>
@@ -92,11 +111,42 @@ const CardImageConatiner = styled.div`
   left: 33%;
   display: flex;
   width: max-content;
-  gap: 500px;
 `;
 
-const Box = styled.div`
-  width: 200px;
-  height: 200px;
-  background-color: red;
+const Image = styled.img`
+  width: 300px;
+  height: 450px;
+  overflow: hidden;
+  border-radius: 100px;
+`;
+
+const ImageX = styled.img`
+  width: 400px;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 100px;
+`;
+
+const ImageContainer = styled.div`
+  display: flex;
+  align-items: center;
+  height: auto;
+`;
+
+const Border = styled.div`
+  position: relative;
+  width: 340px;
+  height: 2px;
+  background-color: lightgray;
+`;
+
+const Text = styled.p`
+  position: absolute;
+  font-size: 1.025rem;
+  line-height: 42px;
+  color: #47494d;
+  font-weight: 500;
+  top: 0;
+  left: 10%;
+  -webkit-text-stroke: 0.2px;
 `;
