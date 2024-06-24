@@ -108,7 +108,17 @@ const GuestBook = () => {
       ) : (
         <ProgressBar />
       )}
-      {isSucessGuestBook && <Alert onClickCloseAlert={onClickCloseAlert} />}
+      {isSucessGuestBook && (
+        <Alert
+          onClickCloseAlert={onClickCloseAlert}
+          text={
+            <p>
+              작성 해주신 소중한 방명록이
+              <br /> 신랑, 신부에게 전달 되었습니다 :)
+            </p>
+          }
+        />
+      )}
     </>
   );
 };
@@ -203,7 +213,7 @@ const InputContainer = styled.div`
     outline: 1px solid rgb(204, 204, 204);
     padding: 6px;
     &:focus {
-      outline: 1px solid #f98d99;
+      outline: 2px solid #ffb3de;
     }
   }
 

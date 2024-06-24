@@ -3,18 +3,16 @@ import useDisableBodyScroll from "../hooks/useDisabledBodyScroll";
 
 interface AlertProps {
   onClickCloseAlert: () => void;
+  text: React.ReactNode;
 }
 
-const Alert = ({ onClickCloseAlert }: AlertProps) => {
+const Alert = ({ onClickCloseAlert, text }: AlertProps) => {
   useDisableBodyScroll();
 
   return (
     <AlertBackground>
       <AlertContainer>
-        <p>
-          작성 해주신 소중한 방명록이
-          <br /> 신랑, 신부에게 전달 되었습니다 :)
-        </p>
+        {text}
         <CloseButton onClick={onClickCloseAlert}>닫기</CloseButton>
       </AlertContainer>
     </AlertBackground>
