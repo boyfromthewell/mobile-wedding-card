@@ -139,13 +139,13 @@ const Divider = styled.div`
 
 const ModalContainer = styled.div`
   width: 80%;
-  height: 30dvh;
+  height: max-content;
   background-color: #fff;
   border-radius: 12px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 17px 27px;
+  padding: 24px 27px;
 `;
 
 const FormRow = styled.div`
