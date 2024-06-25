@@ -6,39 +6,34 @@ import Image3 from "/temp3.jpg";
 
 const StickySlider = () => {
   const cardContainerRef = useRef<HTMLDivElement>(null);
-  const tickingRef = useRef(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      if (!tickingRef.current) {
-        window.requestAnimationFrame(() => {
-          const START_VH = 250;
-          const END_VH = 450;
+      window.requestAnimationFrame(() => {
+        const START_VH = 250;
+        const END_VH = 450;
 
-          const viewportHeight =
-            window.innerHeight ||
-            document.documentElement.clientHeight ||
-            document.body.clientHeight;
+        const viewportHeight =
+          window.innerHeight ||
+          document.documentElement.clientHeight ||
+          document.body.clientHeight;
 
-          const startHeightInPx = (START_VH * viewportHeight) / 100;
-          const endHeightInPx = (END_VH * viewportHeight) / 100;
-          const element = cardContainerRef.current;
+        const startHeightInPx = (START_VH * viewportHeight) / 100;
+        const endHeightInPx = (END_VH * viewportHeight) / 100;
+        const element = cardContainerRef.current;
 
-          if (element) {
-            const currentScrollY =
-              window.scrollY - element.getBoundingClientRect().y;
-            if (currentScrollY > 5000) return;
+        if (element) {
+          const currentScrollY =
+            window.scrollY - element.getBoundingClientRect().y;
+          if (currentScrollY > 5000) return;
 
-            const scrollRatio =
-              (currentScrollY - startHeightInPx) /
-              (endHeightInPx - startHeightInPx);
+          const scrollRatio =
+            (currentScrollY - startHeightInPx) /
+            (endHeightInPx - startHeightInPx);
 
-            element.style.transform = `translateX(-${scrollRatio * 80}%)`;
-          }
-          tickingRef.current = false;
-        });
-        tickingRef.current = true;
-      }
+          element.style.transform = `translateX(-${scrollRatio * 90}%)`;
+        }
+      });
     };
 
     window.addEventListener("scroll", handleScroll);
