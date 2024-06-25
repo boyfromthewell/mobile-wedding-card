@@ -6,34 +6,39 @@ import Image3 from "/temp3.jpg";
 
 const StickySlider = () => {
   const cardContainerRef = useRef<HTMLDivElement>(null);
+  const tickingRef = useRef(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      window.requestAnimationFrame(() => {
-        const START_VH = 250;
-        const END_VH = 450;
+      if (!tickingRef.current) {
+        window.requestAnimationFrame(() => {
+          const START_VH = 250;
+          const END_VH = 450;
 
-        const viewportHeight =
-          window.innerHeight ||
-          document.documentElement.clientHeight ||
-          document.body.clientHeight;
+          const viewportHeight =
+            window.innerHeight ||
+            document.documentElement.clientHeight ||
+            document.body.clientHeight;
 
-        const startHeightInPx = (START_VH * viewportHeight) / 100;
-        const endHeightInPx = (END_VH * viewportHeight) / 100;
-        const element = cardContainerRef.current;
+          const startHeightInPx = (START_VH * viewportHeight) / 100;
+          const endHeightInPx = (END_VH * viewportHeight) / 100;
+          const element = cardContainerRef.current;
 
-        if (element) {
-          const currentScrollY =
-            window.scrollY - element.getBoundingClientRect().y;
-          if (currentScrollY > 5000) return;
+          if (element) {
+            const currentScrollY =
+              window.scrollY - element.getBoundingClientRect().y;
+            if (currentScrollY > 5000) return;
 
-          const scrollRatio =
-            (currentScrollY - startHeightInPx) /
-            (endHeightInPx - startHeightInPx);
+            const scrollRatio =
+              (currentScrollY - startHeightInPx) /
+              (endHeightInPx - startHeightInPx);
 
-          element.style.transform = `translateX(-${scrollRatio * 80}%)`;
-        }
-      });
+            element.style.transform = `translateX(-${scrollRatio * 80}%)`;
+          }
+          tickingRef.current = false;
+        });
+        tickingRef.current = true;
+      }
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -111,7 +116,7 @@ const CardImageConatiner = styled.div`
   left: 33%;
   display: flex;
   width: max-content;
-  transition: transform 0.2s ease-in-out;
+  will-change: transform;
 `;
 
 const Image = styled.img`
@@ -119,6 +124,7 @@ const Image = styled.img`
   height: 450px;
   overflow: hidden;
   border-radius: 100px;
+  will-change: transform;
 `;
 
 const ImageX = styled.img`
@@ -126,6 +132,7 @@ const ImageX = styled.img`
   height: 300px;
   overflow: hidden;
   border-radius: 100px;
+  will-change: transform;
 `;
 
 const ImageContainer = styled.div`
