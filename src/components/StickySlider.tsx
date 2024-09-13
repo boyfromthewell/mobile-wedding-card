@@ -53,23 +53,19 @@ const StickySlider = () => {
           <ImageContainer>
             <ImageX src={Image1} alt="image1" />
             <Border>
-              <Text>저는 누워있는걸 잘하는 꼼도리에요</Text>
+              <Text>Our story1</Text>
             </Border>
           </ImageContainer>
           <ImageContainer>
             <Image src={Image2} alt="image1" />
             <Border>
-              <Text>그치만 요리도 잘해요</Text>
+              <Text>Our story2</Text>
             </Border>
           </ImageContainer>
           <ImageContainer>
             <Image src={Image3} alt="image1" />
             <Border>
-              <Text>
-                데이식스를 좋아하지만
-                <br />
-                땀똠이도 사랑해요
-              </Text>
+              <Text>Our story3</Text>
             </Border>
           </ImageContainer>
         </CardImageConatiner>

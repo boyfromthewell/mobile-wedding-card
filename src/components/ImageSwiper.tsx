@@ -69,15 +69,11 @@ const Wrapper = styled.div`
   overscroll-behavior: none;
   .swiper_img {
     width: 100%;
-    height: 75%;
+    height: 70%;
     z-index: 1200;
-    background-color: transparent;
+    background-color: #fff;
   }
-  .swiper-slide {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+
   .swiper-scrollbar {
     background-color: #efebe0;
     .swiper-scrollbar-drag {
